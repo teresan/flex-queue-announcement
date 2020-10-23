@@ -1,7 +1,7 @@
 exports.handler = async function(context, event, callback) {
   console.log(event);
   
-	const twiml = new Twilio.twiml.VoiceResponse();
+  const twiml = new Twilio.twiml.VoiceResponse();
   const call = await context.getTwilioClient().calls(event.CallSid).fetch();
   
   const timeDiff = Math.abs(new Date() - call.dateCreated);
